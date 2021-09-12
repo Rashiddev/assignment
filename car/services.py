@@ -3,6 +3,6 @@ import time
 
 
 def generate_hash():
-    hash = hashlib.sha1()
-    hash.update(str(time.time()).encode())
-    return hash.hexdigest()[:33]
+    hash_field = hashlib.sha1()
+    hash_field.update(str(time.time()).encode())
+    return hash_field.hexdigest()[:33]
