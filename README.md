@@ -23,34 +23,24 @@
 
 1. Install <b>git</b> on the system.
 2. Open shell/command prompt and run following command to clone the project:
-
-
-    $ git clone https://github.com/Rashiddev/assignment.git
+    <br>`$ git clone https://github.com/Rashiddev/assignment.git`
 
 
 3. Make sure <b>python3</b> and <b>pip3</b> are installed on the system.
 4. Once inside the project's root directory, install requirements using the following command:
     <br>Note: It's recommended to create a virtual environment and install requirements there.
-
-    
-    $ pip install -r ./requirements/local.txt
+    <br>`$ pip install -r ./requirements/local.txt`
 
 5. Run this command inside the project directory to start the server:
-    
-
-    $ python3 manage.py runserver 8000
+    <br>`$ python3 manage.py runserver 8000`
 
 6. Following URL will open swagger UI from where all the project APIs can be accessed:
-
-
     http://127.0.0.1:8000/api/schema/swagger/
 
 7. All APIs are public and can be accessed without authentication except Car Create API.
    <br> To access Car Creat API, user can authorize using following credentials from Swagger UI:
-   
-    
-    username: admin
-    password: admin@123$
+    <br>`username: admin`
+    <br>`password: admin@123$`
 
 ### Data import from excel
 There is a management command available that can be used to import data in a fresh db.
