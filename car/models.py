@@ -11,8 +11,8 @@ class Make(models.Model):
     name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(unique=True)
     active = models.BooleanField(default=True)
-    created_at = models.DateTimeField()
-    updated_at = models.DateTimeField()
+    created_at = models.DateTimeField(null=True)
+    updated_at = models.DateTimeField(null=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -28,8 +28,8 @@ class CarModel(models.Model):
     slug = models.SlugField(unique=True)
     active = models.BooleanField(default=True)
     make = models.ForeignKey(Make, on_delete=models.CASCADE)
-    created_at = models.DateTimeField()
-    updated_at = models.DateTimeField()
+    created_at = models.DateTimeField(null=True)
+    updated_at = models.DateTimeField(null=True)
 
     class Meta:
         unique_together = ('name', 'make')
@@ -48,8 +48,8 @@ class CarSubModel(models.Model):
     slug = models.SlugField(unique=True)
     active = models.BooleanField(default=True)
     model = models.ForeignKey(CarModel, null=True, on_delete=models.CASCADE)
-    created_at = models.DateTimeField()
-    updated_at = models.DateTimeField()
+    created_at = models.DateTimeField(null=True)
+    updated_at = models.DateTimeField(null=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -76,8 +76,8 @@ class Car(models.Model):
     transmission = models.CharField(choices=TRANSMISSION, default=TRANSMISSION.automatic, max_length=9)
     fuel_type = models.CharField(choices=FUEL_TYPE, max_length=11)
     exterior_color = models.CharField(max_length=50)
-    created_at = models.DateTimeField()
-    updated_at = models.DateTimeField()
+    created_at = models.DateTimeField(null=True)
+    updated_at = models.DateTimeField(null=True)
 
     def __str__(self):
         return f'{self.model}'
