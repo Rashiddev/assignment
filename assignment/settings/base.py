@@ -39,12 +39,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+THIRD_PARTY_APPS = [
+    'drf_spectacular',
+    'rest_framework',
+]
+
 PROJECT_APPS = [
     'car',
 ]
 
 
-INSTALLED_APPS += PROJECT_APPS
+INSTALLED_APPS += THIRD_PARTY_APPS + PROJECT_APPS
 
 
 MIDDLEWARE = [
@@ -119,3 +124,16 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 50
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Assignment',
+    'DESCRIPTION': '',
+    'VERSION': '1.0.0',
+}
+
