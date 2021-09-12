@@ -11,7 +11,7 @@ class Command(BaseCommand):
     help = 'Import Catalog from Excel'
 
     def handle(self, *args, **options):
-        make_df = pd.read_csv("data/makes.csv", error_bad_lines=False)
+        make_df = pd.read_csv("data/makes.csv", error_bad_lines=False, keep_default_na=False)
         row_iter = make_df.iterrows()
         objs = [
             Make(
@@ -24,7 +24,7 @@ class Command(BaseCommand):
         ]
         Make.objects.bulk_create(objs)
 
-        model_df = pd.read_csv("data/models.csv", error_bad_lines=False)
+        model_df = pd.read_csv("data/models.csv", error_bad_lines=False, keep_default_na=False)
         row_iter = model_df.iterrows()
         objs = []
         for index, row in row_iter:
@@ -42,7 +42,7 @@ class Command(BaseCommand):
                 )
         CarModel.objects.bulk_create(objs)
 
-        submodel_df = pd.read_csv("data/submodels.csv", error_bad_lines=False)
+        submodel_df = pd.read_csv("data/submodels.csv", error_bad_lines=False, keep_default_na=False)
         row_iter = submodel_df.iterrows()
         objs = []
         for index, row in row_iter:
@@ -60,7 +60,7 @@ class Command(BaseCommand):
                 )
         CarSubModel.objects.bulk_create(objs)
 
-        submodel_df = pd.read_csv("data/cars.csv", error_bad_lines=False)
+        submodel_df = pd.read_csv("data/cars.csv", error_bad_lines=False, keep_default_na=False)
         row_iter = submodel_df.iterrows()
 
         for index, row in row_iter:
