@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    'django_filters',
     'drf_spectacular',
     'rest_framework',
 ]

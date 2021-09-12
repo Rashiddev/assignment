@@ -9,6 +9,7 @@ router = routers.DefaultRouter()
 router.register(r"makes", views.MakeViewSet)
 router.register(r"models", views.CarModelViewSet)
 router.register(r"submodels", views.CarSubModelViewSet)
+router.register(r"cars", views.CarViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),

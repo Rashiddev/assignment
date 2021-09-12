@@ -66,7 +66,7 @@ class Car(models.Model):
 
     hash = models.CharField(max_length=33, default=generate_hash, unique=True)
     active = models.BooleanField(default=True)
-    year = models.PositiveSmallIntegerField(MinValueValidator(1886))
+    year = models.PositiveSmallIntegerField(validators=[MinValueValidator(1886),])
     mileage = models.PositiveIntegerField(default=0)
     price = models.PositiveIntegerField()
     make = models.ForeignKey(Make, on_delete=models.CASCADE)
