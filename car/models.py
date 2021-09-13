@@ -64,7 +64,7 @@ class Car(models.Model):
     TRANSMISSION = Choices('automatic', 'manual')
     FUEL_TYPE = Choices('diesel', 'electricity', 'hybrid', 'petrol')
 
-    hash = models.CharField(max_length=33, default=generate_hash, unique=True)
+    hash = models.CharField(max_length=100, default=generate_hash, unique=True)
     active = models.BooleanField(default=True)
     year = models.PositiveSmallIntegerField(validators=[MinValueValidator(1886),])
     mileage = models.PositiveIntegerField(default=0)
