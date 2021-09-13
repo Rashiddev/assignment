@@ -9,14 +9,8 @@
     $ docker-compose build
     $ docker-compose up
 
-### Create an admin user
-    $ docker-compose exec web python manage.py createsuperuser
-
 ### Interact with APIs on this URL:
     $ http://127.0.0.1:8000/api/schema/swagger/
-
-### Run tests
-    $ docker-compose exec web python manage.py test
 
 
 ## Development Steps
