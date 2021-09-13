@@ -1,6 +1,6 @@
 from django_filters import rest_framework as filters
 
-from car.models import Car
+from car.models import Car, CarModel, CarSubModel
 
 
 class CarFilter(filters.FilterSet):
@@ -22,4 +22,24 @@ class CarFilter(filters.FilterSet):
             'make',
             'model',
             'submodel'
+        )
+
+
+class CarModelFilter(filters.FilterSet):
+    make = filters.CharFilter(field_name='make__name', lookup_expr='iexact')
+
+    class Meta:
+        model = CarModel
+        fields = (
+            'make',
+        )
+
+
+class CarSubModelFilter(filters.FilterSet):
+    model = filters.CharFilter(field_name='model__name', lookup_expr='iexact')
+
+    class Meta:
+        model = CarSubModel
+        fields = (
+            'model',
         )

@@ -13,11 +13,15 @@ class MakeViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
 class CarModelViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     queryset = CarModel.objects.all()
     serializer_class = serializers.CarModelListSerializer
+    filter_backends = (d_filters.DjangoFilterBackend,)
+    filterset_class = filtersets.CarModelFilter
 
 
 class CarSubModelViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     queryset = CarSubModel.objects.all()
     serializer_class = serializers.CarSubModelListSerializer
+    filter_backends = (d_filters.DjangoFilterBackend,)
+    filterset_class = filtersets.CarSubModelFilter
 
 
 class CarViewSet(
