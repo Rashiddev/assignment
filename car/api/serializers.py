@@ -56,7 +56,7 @@ class CarCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Car
         fields = (
-            'hash',
+            # 'hash',
             'active',
             'year',
             'mileage',

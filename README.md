@@ -12,6 +12,9 @@
 ### Interact with APIs on this URL:
     $ http://127.0.0.1:8000/api/schema/swagger/
 
+### Authenticate for Car Create API using below credentials:
+    username: admin
+    password: admin@123$
 
 ## Development Steps
 
